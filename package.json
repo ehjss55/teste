@@ -1,0 +1,55 @@
+{
+  "name": "newmenus",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "check": "tsc --noEmit && echo ✔ Ok",
+    "build": "tsc",
+    "dev": "bun --env-file .env ./src/index.ts",
+    "dev:dev": "bun --env-file .env.dev ./src/index.ts",
+    "watch": "bun --watch --env-file .env ./src/index.ts",
+    "watch:dev": "bun --watch --env-file .env.dev ./src/index.ts",
+    "start": "bun --env-file .env .",
+    "start:dev": "bun --env-file .env.dev ."
+  },
+  "dependencies": {
+    "@magicyan/discord": "^1.4.9",
+    "chalk": "5.4.1",
+    "discord.js": "14.19.3",
+    "fast-glob": "3.3.3",
+    "rou3": "0.5.1",
+    "zod": "3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "5.7.2",
+    "@types/bun": "^1.2.10"
+  },
+  "imports": {
+    "#database": [
+      "./build/database/index.js"
+    ],
+    "#base": [
+      "./build/discord/base/index.js"
+    ],
+    "#functions": [
+      "./build/functions/index.js"
+    ],
+    "#menus": [
+      "./build/menus/index.js"
+    ],
+    "#settings": [
+      "./build/settings/index.js"
+    ],
+    "#tools": [
+      "./build/tools/index.js"
+    ],
+    "#server": [
+      "./build/server/index.js"
+    ],
+    "#lib": [
+      "./build/lib/index.js"
+    ],
+    "#shared/*": ["./build/shared/*"]
+  },
+  "baseVersion": "1.2.7"
+}
